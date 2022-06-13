@@ -58,7 +58,7 @@ body .game .header__counter {
   padding: 0.5rem;
   font-family: 'DIGITALDREAM', sans-serif;
   font-size: 3.2rem;
-  min-width: 8rem;
+  min-width: 9rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -101,11 +101,17 @@ body .game__board .cell {
   cursor: pointer;
   background-size: 2rem;
   background-position: center;
+  background-repeat: no-repeat;
 }
 
 body .game__board .cell--is-flag {
   background-image: url("../assets/flag.svg");
   background-repeat: no-repeat;
+}
+
+body .game__board .cell--is-mine {
+  background-image: url("../assets/bomb.svg");
+  background-color: var(--alarm-color);
 }
 
 body .game__panel .panel__header {

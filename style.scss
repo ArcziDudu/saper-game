@@ -73,10 +73,16 @@ body{
                 cursor: pointer;
                 background-size: 2rem;
                 background-position: center;
+                background-repeat: no-repeat;
+
             }
             .cell--is-flag{
                 background-image: url('../assets/flag.svg');
                 background-repeat: no-repeat;
+            }
+            .cell--is-mine{
+                background-image: url('../assets/bomb.svg');
+                background-color: var(--alarm-color);
             }
         }
         &__panel{

@@ -2,6 +2,13 @@
   --primary-color: #c0c0c0;
   --primary-color--dark: #808080;
   --alarm-color: #f80000;
+  --cell-size: 4rem;
+  --game-padding: 1.5rem;
+  --border-width: 0.3rem;
+  --cells-in-row: 8;
+  --game-max-width: calc(
+        var(--cell-size) * var(--cells-in-row) + calc(2 * var(--game-padding)) +
+          calc(2 * var(--border-width)));
 }
 
 @font-face {
@@ -30,8 +37,8 @@ body {
 
 body .game {
   background-color: var(--primary-color);
-  padding: 1.5rem;
-  max-width: 35.6rem;
+  padding: var(--game-padding);
+  max-width: var(--game-max-width);
   margin: 0 auto;
 }
 
@@ -89,9 +96,16 @@ body .game__board {
 }
 
 body .game__board .cell {
-  width: 4rem;
-  height: 4rem;
+  width: var(--cell-size);
+  height: var(--cell-size);
   cursor: pointer;
+  background-size: 2rem;
+  background-position: center;
+}
+
+body .game__board .cell--is-flag {
+  background-image: url("../assets/flag.svg");
+  background-repeat: no-repeat;
 }
 
 body .game__panel .panel__header {
@@ -184,7 +198,7 @@ body .game .modal__content button:hover {
 }
 
 body .game .border {
-  border: .3rem solid;
+  border: var(--border-width) solid;
 }
 
 body .game .border--convex {
@@ -197,5 +211,10 @@ body .game .border--concave {
 
 body .game .hide {
   visibility: hidden;
+}
+
+body .game .border--revealed {
+  border-width: .1rem;
+  border-color: var(--primary-color--dark);
 }
 /*# sourceMappingURL=style.css.map */
